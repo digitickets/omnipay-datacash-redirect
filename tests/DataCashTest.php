@@ -1,14 +1,14 @@
 <?php
 
-namespace Omnipay\DataCash\Test\Gateway;
+namespace Omnipay\DataCashRedirect\Test\Gateway;
 
-use Omnipay\DataCash\Gateway;
+use Omnipay\DataCashRedirect\Gateway;
 use Omnipay\Tests\GatewayTestCase;
 
 class DataCashTest extends GatewayTestCase
 {
     /**
-     * @var \Omnipay\DataCash\Gateway
+     * @var \Omnipay\DataCashRedirect\Gateway
      */
     protected $gateway;
 

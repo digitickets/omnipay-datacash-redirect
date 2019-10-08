@@ -7,14 +7,9 @@
     "autoload": {
         "psr-4": { "Omnipay\\DataCash\\" : "src/" }
     },
-    "config": {
-        "platform": {
-            "php": "7.0"
-        }
-    },
     "require": {
-        "php": "^7.0",
-        "omnipay/common": "~2.0"
+        "omnipay/common": "~2.0",
+        "guzzlehttp/psr7": "^1.5.2"
     },
     "require-dev": {
         "omnipay/tests": "~2.0",

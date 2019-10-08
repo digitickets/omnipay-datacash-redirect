@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\DataCash\Traits;
+namespace Omnipay\DataCashRedirect\Traits;
 
 /**
  * Parameters that can be set at the gateway class, and so

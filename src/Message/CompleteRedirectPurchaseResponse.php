@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\DataCash\Message;
+namespace Omnipay\DataCashRedirect\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;

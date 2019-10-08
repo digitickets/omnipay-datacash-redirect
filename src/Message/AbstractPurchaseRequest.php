@@ -1,9 +1,9 @@
 <?php
 
-namespace Omnipay\DataCash\Message;
+namespace Omnipay\DataCashRedirect\Message;
 
 use Omnipay\Common\Message\AbstractRequest;
-use Omnipay\DataCash\Traits\GatewayParamsTrait;
+use Omnipay\DataCashRedirect\Traits\GatewayParamsTrait;
 
 abstract class AbstractPurchaseRequest extends AbstractRequest
 {

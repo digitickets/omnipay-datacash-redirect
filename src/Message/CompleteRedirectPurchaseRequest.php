@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\DataCash\Message;
+namespace Omnipay\DataCashRedirect\Message;
 
 use SimpleXMLElement;
 
@@ -33,11 +33,6 @@ class CompleteRedirectPurchaseRequest extends AbstractPurchaseRequest
      */
     public function sendData($data): CompleteRedirectPurchaseResponse
     {
-        if ($this->getTestMode()) {
-            //disable ssl verification if in test mode
-            $this->httpClient->setConfig(['verify' => false]);
-        }
-        
         $xml = $data->saveXML();
         $httpResponse = $this->httpClient->post($this->getEndpoint(), null, $xml)->send();
 

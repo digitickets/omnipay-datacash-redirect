@@ -1,15 +1,17 @@
 <?php
 
-namespace Omnipay\DataCash\Message;
+namespace Omnipay\DataCashRedirect\Message;
 
 use Omnipay\Common\Exception\InvalidResponseException;
+use Omnipay\Common\Message\AbstractResponse;
+use Omnipay\Common\Message\RedirectResponseInterface;
 use Omnipay\Common\Message\RequestInterface;
 use SimpleXMLElement;
 
 /**
  * DataCash Response
  */
-class RedirectPurchaseResponse extends AbstractPurchaseResponse
+class RedirectPurchaseResponse extends AbstractResponse implements RedirectResponseInterface
 {
 
     const RESULT_SUCCESS = 1;
@@ -30,14 +32,20 @@ class RedirectPurchaseResponse extends AbstractPurchaseResponse
     }
 
     /**
-     * Returns true if the response from the gateway is successful 
-     * 
+     * @return bool
+     */
+    public function isSuccessful(): bool
+    {
+        return isset($this->data->status)
+            && static::RESULT_SUCCESS === (int)$this->data->status;
+    }
+
+    /**
      * @return bool
      */
     public function isRedirect()
     {
-        return isset($this->data->status)
-            && static::RESULT_SUCCESS === (int)$this->data->status;
+        return true;
     }
 
     /**
@@ -51,7 +59,7 @@ class RedirectPurchaseResponse extends AbstractPurchaseResponse
     /**
      * @return string
      */
-    public function getTransactionId(): string
+    public function getTransactionId(): int
     {
         return $this->data->merchantreference;
     }

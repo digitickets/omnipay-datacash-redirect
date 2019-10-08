@@ -1,10 +1,9 @@
 <?php
 
-namespace Omnipay\DataCash;
+namespace Omnipay\DataCashRedirect;
 
 use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Message\RequestInterface;
-use Omnipay\DataCash\Traits\GatewayParamsTrait;
 
 /**
  * @method \Omnipay\Common\Message\RequestInterface authorize(array $options = array())
@@ -18,7 +17,6 @@ use Omnipay\DataCash\Traits\GatewayParamsTrait;
  */
 class Gateway extends AbstractGateway
 {
-    use GatewayParamsTrait;
     /**
      * Get gateway name
      *
@@ -45,21 +43,71 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @param array $parameters
-     *
-     * @return \Omnipay\Common\Message\RequestInterface
+     * @return mixed
      */
-    public function purchase(array $parameters = []): RequestInterface
+    public function getMerchantId()
     {
-        return $this->createRequest('\Omnipay\DataCash\Message\RedirectPurchaseRequest', $parameters);
+        return $this->getParameter('merchantId');
+    }
+
+    /**
+     * @param $value
+     * @return Gateway
+     */
+    public function setMerchantId($value)
+    {
+        return $this->setParameter('merchantId', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->getParameter('password');
+    }
+
+    /**
+     * @param $value
+     * @return Gateway
+     */
+    public function setPassword($value)
+    {
+        return $this->setParameter('password', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPageId()
+    {
+        return $this->getParameter('pageId');
+    }
+
+    /**
+     * @param $value
+     * @return Gateway
+     */
+    public function setPageId($value)
+    {
+        return $this->setParameter('pageId', $value);
     }
 
     /**
      * @param array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest|RequestInterface
      */
-    public function completePurchase(array $parameters = []): RequestInterface
+    public function purchase(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\DataCash\Message\CompleteRedirectPurchaseRequest', $parameters);
+        return $this->createRequest('\Omnipay\DataCashRedirect\Message\RedirectPurchaseRequest', $parameters);
+    }
+
+    /**
+     * @param array $parameters
+     * @return \Omnipay\Common\Message\AbstractRequest|RequestInterface
+     */
+    public function completePurchase(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\DataCashRedirect\Message\CompleteRedirectPurchaseRequest', $parameters);
     }
 }
