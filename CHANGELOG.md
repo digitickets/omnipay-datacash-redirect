@@ -10,3 +10,7 @@
 
   - Remove types in GatewayParamsTrait
   - Hardcode isSuccessful() response to false in RedirectPurchaseResponse
+
+## 0.0.4
+
+  - Fix getTransactionReference() return type

@@ -55,7 +55,7 @@ class CompleteRedirectPurchaseResponse extends AbstractResponse
     /**
      * getTransactionReference
      */
-    public function getTransactionReference(): int
+    public function getTransactionReference()
     {
         return isset($this->data->HpsTxn->datacash_reference) ?
             $this->data->HpsTxn->datacash_reference : null;
