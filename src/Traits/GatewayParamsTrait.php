@@ -11,7 +11,7 @@ trait GatewayParamsTrait
     /**
      * @return mixed
      */
-    public function getMerchantId(): int
+    public function getMerchantId()
     {
         return $this->getParameter('merchantId');
     }
@@ -20,7 +20,7 @@ trait GatewayParamsTrait
      * @param $value
      * @return mixed
      */
-    public function setMerchantId(int $value)
+    public function setMerchantId($value)
     {
         return $this->setParameter('merchantId', $value);
     }
@@ -28,7 +28,7 @@ trait GatewayParamsTrait
     /**
      * @return mixed
      */
-    public function getPassword(): string
+    public function getPassword()
     {
         return $this->getParameter('password');
     }
@@ -37,7 +37,7 @@ trait GatewayParamsTrait
      * @param $value
      * @return mixed
      */
-    public function setPassword(string $value)
+    public function setPassword($value)
     {
         return $this->setParameter('password', $value);
     }
@@ -45,7 +45,7 @@ trait GatewayParamsTrait
     /**
      * @return mixed
      */
-    public function getPageId(): int
+    public function getPageId()
     {
         return $this->getParameter('pageId');
     }
@@ -54,7 +54,7 @@ trait GatewayParamsTrait
      * @param $value
      * @return mixed
      */
-    public function setPageId(int $value)
+    public function setPageId($value)
     {
         return $this->setParameter('pageId', $value);
     }

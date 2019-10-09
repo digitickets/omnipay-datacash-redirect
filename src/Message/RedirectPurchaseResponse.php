@@ -13,9 +13,6 @@ use SimpleXMLElement;
  */
 class RedirectPurchaseResponse extends AbstractResponse implements RedirectResponseInterface
 {
-
-    const RESULT_SUCCESS = 1;
-
     /**
      * RedirectPurchaseResponse constructor.
      * @param RequestInterface $request
@@ -36,8 +33,10 @@ class RedirectPurchaseResponse extends AbstractResponse implements RedirectRespo
      */
     public function isSuccessful(): bool
     {
-        return isset($this->data->status)
-            && static::RESULT_SUCCESS === (int)$this->data->status;
+        // The initial Server response is never complete without
+        // redirecting the user.
+
+        return false;
     }
 
     /**
