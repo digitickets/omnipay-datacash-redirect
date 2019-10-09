@@ -5,7 +5,7 @@
     "keywords": ["omnipay", "datacash"],
     "homepage": "https://gitlab.totallydev.com/digitickets/omnipay.datacash",
     "autoload": {
-        "psr-4": { "Omnipay\\DataCash\\" : "src/" }
+        "psr-4": { "Omnipay\\DataCashRedirect\\" : "src/" }
     },
     "require": {
         "omnipay/common": "~2.0",
